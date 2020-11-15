@@ -13,9 +13,12 @@ require('./startup/routes')(app);
 //create db connection
 require('./startup/db')();
 
+// prod middleware
+require('./startup/prod')(app);
+
 //template renderer
-app.set('view engine','pug');
-app.set('views','./views');
+app.set('view engine', 'pug');
+app.set('views', './views');
 
 //joi
 require('./startup/validation')();
