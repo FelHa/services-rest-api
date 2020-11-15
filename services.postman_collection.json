@@ -1,0 +1,423 @@
+{
+  "info": {
+    "_postman_id": "7d510f69-e544-44a1-819a-c8c2a324cec6",
+    "name": "services-rest-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "services",
+      "item": [
+        {
+          "name": "http://localhost:3000/api/services",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTM1NjR9.hn64gnDly3aOg4xt9VZ_kknKbgvzNF6Eoj3Z0I80_vU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"title\": \"Foobar\",\n\t\"dailyRentalRate\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/services",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "services"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/services/",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmUzYTAxNGQ3YzI4ZjAzZDNjN2EiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTQzOTR9.sai4JC8V_1BSDeL6Q7WwNL8rvhuccelPenhdh-RcdUk",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/services/5e346db0014d7c28f03d3c79",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "services", "5e346db0014d7c28f03d3c79"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/services/",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmUzYTAxNGQ3YzI4ZjAzZDNjN2EiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTQzOTR9.sai4JC8V_1BSDeL6Q7WwNL8rvhuccelPenhdh-RcdUk",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"title\": \"PlotXTransform\",\n\t\"dailyRentalRate\": 12 \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/services/5e346c92014d7c28f03d3c75",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "services", "5e346c92014d7c28f03d3c75"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/services",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "services"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "rentals",
+      "item": [
+        {
+          "name": "http://localhost:3000/api/rentals/",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDhhNzgyMjBkNzcwZjNlYjRkNzJlYmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1Njk0MTgxMzl9.eGJEGDNITj79-wxZ8neMIHpvGSi-a2sGe8Scg3i3cAw",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/rentals/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "rentals", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/rentals/",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"user\": \"5e346afca6ea4a0908b34e68\",\n\t\"service\": \"5e347088142ca900f87edc34\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/rentals/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "rentals", ""]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "http://localhost:3000/api/users/",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"test23\",\n\t\"email\": \"test@teste\",\n\t\"password\": \"test23\",\n\t\"isAdmin\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/users/ Copy",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"test23\",\n\t\"email\": \"test@teste\",\n\t\"password\": \"test23\",\n\t\"isAdmin\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users/5e347ab31dc2c9108c0f7235",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "5e347ab31dc2c9108c0f7235"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/users/",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTYxMDR9.yiT3IX-_5ntnnmcMNnaFjTiApcL6iIhOrM_c8y4FY4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/users/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/users/5d8a109f359d2d369c5bc09e",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NzI0MDE0MmNhOTAwZjg3ZWRjMzYiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTU0MjR9.r3RuCXvHAzV9286WCPLNESGHdD7NY6fmrTqKtnfNwQM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Gerd\",\n\t\"email\": \"gerd.blumenstein@da-tex.de\",\n\t\"password\":\"test23\",\n\t\"isAdmin\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users/5e346e3a014d7c28f03d3c7a",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "5e346e3a014d7c28f03d3c7a"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3000/api/users/me",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTcxNDZ9.hzSmgtObqW69OHUt7_XfWFVkyuqSJTB25lpPsim8k1o",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/users/me",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "me"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "http://localhost:3000/api/auth/",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"felix@proton.net\",\n\t\"password\": \"foobar23\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", ""]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "returns",
+      "item": [
+        {
+          "name": "return",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Auth-Token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"userId\": \"5e346e3a014d7c28f03d3c7a\",\n\t\"serviceId\":\"5e346d6b014d7c28f03d3c76\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/returns",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "returns"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

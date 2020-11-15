@@ -1,0 +1,7 @@
+{
+  "mail": {
+    "password": "services-rest-api_emailPassword"
+  },
+  "db": { "pw": "services-rest-api_pw" },
+  "jwtPrivateKey": "services-rest-api_jwtPrivateKey"
+}

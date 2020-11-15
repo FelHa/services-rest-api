@@ -1,0 +1,11 @@
+{
+  "name": "services-rest-api",
+  "mail": {
+    "host": "prod-mail-server"
+  },
+  "jwtPrivateKey": "",
+  "db": {
+    "connection": "@localhost/services-rest-api?authSource=admin",
+    "user": "services-rest-api"
+  }
+}
