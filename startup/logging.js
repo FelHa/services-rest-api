@@ -8,7 +8,7 @@ module.exports = function () {
   const user = config.get('db.user');
   //add winston logger to mongodb
   winston.add(winston.transports.MongoDB, {
-    db: `mongodb://${user}:${pw}${db}`,
+    db: `mongodb+srv://${user}:${pw}${db}`,
     level: 'error',
   });
 
