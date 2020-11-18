@@ -9,7 +9,7 @@ module.exports = function () {
   const pw = config.get('db.pw');
 
   mongoose
-    .connect(`mongodb://${user}:${pw}${db}`, {
+    .connect(`mongodb+srv://${user}:${pw}${db}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,

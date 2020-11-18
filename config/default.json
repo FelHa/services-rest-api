@@ -5,7 +5,7 @@
   },
   "jwtPrivateKey": "",
   "db": {
-    "connection": "@localhost/services-rest-api?authSource=admin",
+    "connection": "@cluster0.zzsge.mongodb.net/services-rest-api?retryWrites=true&w=majority",
     "user": "services-rest-api"
   }
 }
