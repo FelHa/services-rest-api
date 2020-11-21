@@ -1,423 +1,511 @@
 {
-  "info": {
-    "_postman_id": "7d510f69-e544-44a1-819a-c8c2a324cec6",
-    "name": "services-rest-api",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "services",
-      "item": [
-        {
-          "name": "http://localhost:3000/api/services",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTM1NjR9.hn64gnDly3aOg4xt9VZ_kknKbgvzNF6Eoj3Z0I80_vU",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"title\": \"Foobar\",\n\t\"dailyRentalRate\": 10\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/services",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "services"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/services/",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmUzYTAxNGQ3YzI4ZjAzZDNjN2EiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTQzOTR9.sai4JC8V_1BSDeL6Q7WwNL8rvhuccelPenhdh-RcdUk",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "http://localhost:3000/api/services/5e346db0014d7c28f03d3c79",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "services", "5e346db0014d7c28f03d3c79"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/services/",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmUzYTAxNGQ3YzI4ZjAzZDNjN2EiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTQzOTR9.sai4JC8V_1BSDeL6Q7WwNL8rvhuccelPenhdh-RcdUk",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"title\": \"PlotXTransform\",\n\t\"dailyRentalRate\": 12 \n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/services/5e346c92014d7c28f03d3c75",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "services", "5e346c92014d7c28f03d3c75"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/services",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:3000/api/services",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "services"]
-            }
-          },
-          "response": []
-        }
-      ],
-      "protocolProfileBehavior": {}
-    },
-    {
-      "name": "rentals",
-      "item": [
-        {
-          "name": "http://localhost:3000/api/rentals/",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDhhNzgyMjBkNzcwZjNlYjRkNzJlYmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1Njk0MTgxMzl9.eGJEGDNITj79-wxZ8neMIHpvGSi-a2sGe8Scg3i3cAw",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "http://localhost:3000/api/rentals/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "rentals", ""]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/rentals/",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"user\": \"5e346afca6ea4a0908b34e68\",\n\t\"service\": \"5e347088142ca900f87edc34\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/rentals/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "rentals", ""]
-            }
-          },
-          "response": []
-        }
-      ],
-      "protocolProfileBehavior": {}
-    },
-    {
-      "name": "users",
-      "item": [
-        {
-          "name": "http://localhost:3000/api/users/",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"name\": \"test23\",\n\t\"email\": \"test@teste\",\n\t\"password\": \"test23\",\n\t\"isAdmin\": \"false\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/users/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "users", ""]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/users/ Copy",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"name\": \"test23\",\n\t\"email\": \"test@teste\",\n\t\"password\": \"test23\",\n\t\"isAdmin\": \"false\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/users/5e347ab31dc2c9108c0f7235",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "users", "5e347ab31dc2c9108c0f7235"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/users/",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTYxMDR9.yiT3IX-_5ntnnmcMNnaFjTiApcL6iIhOrM_c8y4FY4c",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "http://localhost:3000/api/users/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "users", ""]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/users/5d8a109f359d2d369c5bc09e",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NzI0MDE0MmNhOTAwZjg3ZWRjMzYiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTU0MjR9.r3RuCXvHAzV9286WCPLNESGHdD7NY6fmrTqKtnfNwQM",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"name\": \"Gerd\",\n\t\"email\": \"gerd.blumenstein@da-tex.de\",\n\t\"password\":\"test23\",\n\t\"isAdmin\": \"false\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/users/5e346e3a014d7c28f03d3c7a",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "users", "5e346e3a014d7c28f03d3c7a"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "http://localhost:3000/api/users/me",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTcxNDZ9.hzSmgtObqW69OHUt7_XfWFVkyuqSJTB25lpPsim8k1o",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "http://localhost:3000/api/users/me",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "users", "me"]
-            }
-          },
-          "response": []
-        }
-      ],
-      "protocolProfileBehavior": {}
-    },
-    {
-      "name": "auth",
-      "item": [
-        {
-          "name": "http://localhost:3000/api/auth/",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"email\": \"felix@proton.net\",\n\t\"password\": \"foobar23\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/auth/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "auth", ""]
-            }
-          },
-          "response": []
-        }
-      ],
-      "protocolProfileBehavior": {}
-    },
-    {
-      "name": "returns",
-      "item": [
-        {
-          "name": "return",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-Auth-Token",
-                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s",
-                "type": "text"
-              },
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"userId\": \"5e346e3a014d7c28f03d3c7a\",\n\t\"serviceId\":\"5e346d6b014d7c28f03d3c76\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/returns",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "returns"]
-            }
-          },
-          "response": []
-        }
-      ],
-      "protocolProfileBehavior": {}
-    }
-  ],
-  "protocolProfileBehavior": {}
+	"info": {
+		"_postman_id": "1512105d-52f6-468c-8703-f135d79202f6",
+		"name": "services-rest-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "services",
+			"item": [
+				{
+					"name": "api/services",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Customer Support\",\n\t\"dailyRentalRate\": 90\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/services",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/services",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/services/5fb8d4db259a2c00176b5134",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"services",
+								"5fb8d4db259a2c00176b5134"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/services",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Barfoo\",\n\t\"dailyRentalRate\": 12 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/services/5fb51884e6f52b10e000bf78",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"services",
+								"5fb51884e6f52b10e000bf78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/services",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "rentals",
+			"item": [
+				{
+					"name": "api/rentals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/rentals/",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"rentals",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/rentals",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": \"5fb5715c59c17136f352c791\",\n\t\"service\": \"5fb51884e6f52b10e000bf78\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/rentals/",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"rentals",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "api/users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"adminAnton\",\n\t\"email\": \"adminAnton@sra.net\",\n\t\"password\": \"foobar23\",\n\t\"isAdmin\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/users/",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/users",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"test23\",\n\t\"email\": \"test@teste\",\n\t\"password\": \"test23\",\n\t\"isAdmin\": \"false\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/users/5fb55f8915104e2ca7cde862",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"5fb55f8915104e2ca7cde862"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmIxMDQ2MmQ4OWM3NzJlMTRkMjU1NjUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU0MzY1MTh9._LaI0AlP-0157xbBk3lxqlJSWlr-hs8_nrjcMKZ_asY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/users/",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/users/5d8a109f359d2d369c5bc09e",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NzI0MDE0MmNhOTAwZjg3ZWRjMzYiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTU0MjR9.r3RuCXvHAzV9286WCPLNESGHdD7NY6fmrTqKtnfNwQM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"AdminAnton\",\n\t\"email\": \"new@adminAnton.com\",\n\t\"password\":\"test23\",\n\t\"isAdmin\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/users/5fb8d258259a2c00176b512e",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"5fb8d258259a2c00176b512e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/users/me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/users/me",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "api/auth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"new@adminAnton.com\",\n\t\"password\": \"test23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/auth/",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "returns",
+			"item": [
+				{
+					"name": "api/returns",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"5fb10462d89c772e14d25565\",\n\t\"serviceId\":\"5fb109f09768cb1cc08719ba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/returns",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"returns"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
 }
