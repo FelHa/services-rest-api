@@ -1,9 +1,60 @@
 html
     head
-        title= title
+        title services-rest-api
+        style.
+            html{
+                font-family: sans-serif;
+                font-size: 1em;
+                color: #444;
+            }
+
+            .code {
+                border-radius: 5px; 
+                -moz-border-radius: 5px; 
+                -webkit-border-radius: 5px; 
+                border: 1px solid #BCBEC0;
+                padding: 2px;
+                font:0.8em Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
+            }
+
+            .notice {
+                font-size:0.8em
+            }
+
+            .method {
+                padding: 5px;
+                border-radius: 5px; 
+                -moz-border-radius: 5px; 
+                -webkit-border-radius: 5px; 
+                border: 1px solid #BCBEC0;
+            }
     body
-        h1= message
-        h2= listTitle
-        ul  
-            for item in list
-                li= item
+        h1 Testpage Services Rest API
+        h2 Endpoints:
+        div  
+            div.endpoint 
+                h3 Users:
+                p <span class="method">GET</span> <span class="code">/api/users</span> Get all users <span class="notice">(Authentication required)</span>
+                p <span class="method">GET</span> <span class="code">​/api/users/me</span> Get a single user with a JSON Web Token <span class="notice">(Authentication required)</span>
+                p <span class="method">POST</span> <span class="code">​/api/users</span> Register a new user
+                p <span class="method">PUT</span> ​<span class="code">/api/users/{id}</span> Update a single user <span class="notice">(Authentication required)</span>
+                p <span class="method">DELETE</span> ​<span class="code">/api/users/{id}</span> Delete a single user <span class="notice">(Authentication and Admin required)</span>
+            div.endpoint 
+                h3 Services:
+                p <span class="method">GET</span> <span class="code">/api/services</span> Get all services 
+                p <span class="method">GET</span> <span class="code">​/api/services/{id}</span> Get a single service
+                p <span class="method">POST</span> <span class="code">​/api/services</span> Post a new service <span class="notice">(Authentication required)</span>
+                p <span class="method">PUT</span> ​<span class="code">/api/services/{id}</span> Update a single service <span class="notice">(Authentication required)</span>
+                p <span class="method">DELETE</span> ​<span class="code">/api/services/{id}</span> Delete a single service <span class="notice">(Authentication and Admin required)</span>
+            div.endpoint 
+                h3 Rental:
+                p <span class="method">GET</span> <span class="code">/api/rentals</span> Get all rentals <span class="notice">(Authentication required)</span>
+                p <span class="method">GET</span> <span class="code">/api​/rentals/{id}</span> Get a single rentals <span class="notice">(Authentication required)</span>
+                p <span class="method">POST</span> <span class="code">​/api/rentals</span> Post a new rental of a service for a user <span class="notice">(Authentication required)</span>
+            div.endpoint 
+                h3 Return:
+                p <span class="method">POST</span> <span class="code">​/api/returns</span> Post a new return of a service from a user <span class="notice">(Authentication required)</span> 
+            div.endpoint 
+                h3 Authentication:
+                p <span class="method">POST</span> <span class="code">​/api/auths</span> Authenticate as a user. Returns a JSON Web Token.
+

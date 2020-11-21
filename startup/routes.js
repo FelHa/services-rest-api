@@ -6,7 +6,7 @@ const users = require('../routes/users');
 const home = require('../routes/home');
 const auths = require('../routes/auths');
 const returns = require('../routes/returns');
-const error = require('../middleware/error');
+const errorRequestPipeline = require('../middleware/errorRequestPipeline');
 
 module.exports = function (app) {
   //middleware
@@ -25,5 +25,5 @@ module.exports = function (app) {
   app.use('/', home);
 
   //errorhandler as last middleware
-  app.use(error);
+  app.use(errorRequestPipeline);
 };

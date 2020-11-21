@@ -6,12 +6,7 @@ const router = express.Router();
 router.get(
   '/',
   asyncTemplate((req, res) => {
-    res.render('index', {
-      title: 'services-rest-api',
-      message: 'Testpage Services Rest API',
-      listTitle: 'Endpoints:',
-      list: ['user', 'service', 'rental', 'return', 'auth'],
-    });
+    res.render('index');
   })
 );
 

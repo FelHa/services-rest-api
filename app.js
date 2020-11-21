@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 //logging errors
-require('./startup/logging')();
+require('./startup/errorHandling')();
 
 //config
 require('./startup/config')(app);

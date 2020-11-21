@@ -37,8 +37,7 @@
     "morgan": "^1.10.0",
     "pug": "^2.0.4",
     "util": "^0.12.3",
-    "winston": "^2.4.5",
-    "winston-mongodb": "^3.0.2"
+    "winston": "^2.4.5"
   },
   "devDependencies": {
     "jest": "^24.9.0",
