@@ -7,10 +7,10 @@ module.exports = function () {
   const pw = config.get('db.pw');
   const user = config.get('db.user');
   //add winston logger to mongodb
-  winston.add(winston.transports.MongoDB, {
-    db: `mongodb://${user}:${pw}${db}`,
-    level: 'error',
-  });
+  // winston.add(winston.transports.MongoDB, {
+  //   db: `mongodb+srv://${user}:${pw}${db}`,
+  //   level: 'error',
+  // });
 
   //add error handler for sync uncaught exceptions
   winston.handleExceptions(
