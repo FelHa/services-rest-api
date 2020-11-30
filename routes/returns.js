@@ -10,10 +10,10 @@ const Fawn = require('fawn');
 router.post('/', [auth, validateRequest(validate)], async (req, res) => {
   const rental = await Subscription.lookup(req.body.userId, req.body.serviceId);
   if (!rental)
-    return res.status(404).send('No rental found with ids provided.');
+    return res.status(404).send('No subscription found with ids provided.');
 
   if (rental.dateReturned)
-    return res.status(400).send('Rantal already processed.');
+    return res.status(400).send('Subscription already processed.');
 
   rental.return();
 

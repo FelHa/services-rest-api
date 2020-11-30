@@ -2,7 +2,6 @@ const asyncTemplate = require('../middleware/asyncTemplate');
 const auth = require('../middleware/auth');
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const { Subscription, validate } = require('../models/subscription');
 const { User } = require('../models/user');
 const { Service } = require('../models/service');
@@ -14,8 +13,8 @@ router.get(
   '/',
   auth,
   asyncTemplate(async (req, res) => {
-    const rentals = await Subscription.find().sort('-dateOut');
-    res.send(rentals);
+    const subscription = await Subscription.find().sort('-dateOut');
+    res.send(subscription);
   })
 );
 
@@ -23,10 +22,10 @@ router.get(
   '/:id',
   [auth, validateObjectId],
   asyncTemplate(async (req, res) => {
-    const rental = await Subscription.findById({ _id: req.params.id });
-    if (!rental || rental.length === 0)
-      return res.status(404).send('No rental with matching id found.');
-    res.send(rental);
+    const subscription = await Subscription.findById({ _id: req.params.id });
+    if (!subscription || subscription.length === 0)
+      return res.status(404).send('No subscription with matching id found.');
+    res.send(subscription);
   })
 );
 
@@ -43,13 +42,16 @@ router.post(
     if (!service)
       return res.status(404).send('No service with matching id found.');
 
-    let rental = await Subscription.lookup(req.body.user, req.body.service);
-    if (rental)
+    let subscription = await Subscription.lookup(
+      req.body.user,
+      req.body.service
+    );
+    if (subscription)
       return res
         .status(404)
-        .send('This service has already been booked by the given user.');
+        .send('This service has already been subscribed by the given user.');
 
-    rental = new Subscription({
+    subscription = new Subscription({
       user: {
         _id: user._id,
         name: user.name,
@@ -58,13 +60,13 @@ router.post(
       service: {
         _id: service._id,
         title: service.title,
-        dailyRentalRate: service.dailyRentalRate,
+        monthlyRate: service.monthlyRate,
       },
     });
 
-    await rental.save();
+    await subscription.save();
 
-    res.send(rental);
+    res.send(subscription);
   })
 );
 

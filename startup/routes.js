@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const services = require('../routes/services');
+const categories = require('../routes/categories');
 const subscriptions = require('../routes/subscriptions');
 const users = require('../routes/users');
 const home = require('../routes/home');
@@ -18,6 +19,7 @@ module.exports = function (app) {
 
   //router
   app.use('/api/services', services);
+  app.use('/api/categories', categories);
   app.use('/api/subscriptions', subscriptions);
   app.use('/api/users', users);
   app.use('/api/auth', auths);
