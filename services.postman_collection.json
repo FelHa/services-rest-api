@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "1512105d-52f6-468c-8703-f135d79202f6",
-		"name": "services-rest-api",
+		"_postman_id": "5466681d-3f07-4e75-a1ad-51db87f4aba1",
+		"name": "services-rest-api Heroku",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -27,7 +27,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\": \"Customer Support\",\n\t\"dailyRentalRate\": 90\n}",
+							"raw": "{\n\t\"title\": \"Consulting for large React projects\",\n    \"categoryIds\": [\"5fc4f0383cc7d05764951f4e\"],\n    \"monthlyRate\": 1550\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -51,7 +51,7 @@
 					"response": []
 				},
 				{
-					"name": "api/services",
+					"name": "api/services/:id",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -62,7 +62,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/services/5fb8d4db259a2c00176b5134",
+							"raw": "https://services-rest-api.herokuapp.com/api/5fc4fa8f712674502cdcd751",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -71,15 +71,14 @@
 							],
 							"path": [
 								"api",
-								"services",
-								"5fb8d4db259a2c00176b5134"
+								"5fc4fa8f712674502cdcd751"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "api/services",
+					"name": "api/services/:id",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -105,7 +104,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/services/5fb51884e6f52b10e000bf78",
+							"raw": "https://services-rest-api.herokuapp.com/api/5fb51884e6f52b10e000bf78",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -114,7 +113,6 @@
 							],
 							"path": [
 								"api",
-								"services",
 								"5fb51884e6f52b10e000bf78"
 							]
 						}
@@ -146,21 +144,21 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "rentals",
+			"name": "subscriptions",
 			"item": [
 				{
-					"name": "api/rentals",
+					"name": "api/subscriptions",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "X-Auth-Token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDY3NDEzOTF9.PNbD0g-wN-T2-KSQ6xuRmBxNrP02FFhXTqUi-aNVHLk",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/rentals/",
+							"raw": "https://services-rest-api.herokuapp.com/api/subscriptions/",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -169,7 +167,7 @@
 							],
 							"path": [
 								"api",
-								"rentals",
+								"subscriptions",
 								""
 							]
 						}
@@ -177,7 +175,7 @@
 					"response": []
 				},
 				{
-					"name": "api/rentals",
+					"name": "api/subscriptions",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -195,7 +193,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"user\": \"5fb5715c59c17136f352c791\",\n\t\"service\": \"5fb51884e6f52b10e000bf78\"\n}",
+							"raw": "{\n\t\"user\": \"5fb62ffa23d2760017689edb\",\n\t\"service\": \"5fb51884e6f52b10e000bf78\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -203,7 +201,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/rentals/",
+							"raw": "https://services-rest-api.herokuapp.com/api/subscriptions/",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -212,7 +210,7 @@
 							],
 							"path": [
 								"api",
-								"rentals",
+								"subscriptions",
 								""
 							]
 						}
@@ -264,7 +262,7 @@
 					"response": []
 				},
 				{
-					"name": "api/users",
+					"name": "api/users/:id",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -290,7 +288,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/users/5fb55f8915104e2ca7cde862",
+							"raw": "https://services-rest-api.herokuapp.com/api/5fb55f8915104e2ca7cde862",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -299,7 +297,6 @@
 							],
 							"path": [
 								"api",
-								"users",
 								"5fb55f8915104e2ca7cde862"
 							]
 						}
@@ -335,7 +332,7 @@
 					"response": []
 				},
 				{
-					"name": "api/users/5d8a109f359d2d369c5bc09e",
+					"name": "api/users/:id",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -361,7 +358,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/users/5fb8d258259a2c00176b512e",
+							"raw": "https://services-rest-api.herokuapp.com/api/5fb8d258259a2c00176b512e",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -370,7 +367,6 @@
 							],
 							"path": [
 								"api",
-								"users",
 								"5fb8d258259a2c00176b512e"
 							]
 						}
@@ -498,6 +494,155 @@
 							"path": [
 								"api",
 								"returns"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "api/categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/categories/",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/categories/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDY3NDE4MzB9.NZiZ3tlxREdQmbcmcvFvbL3hIR1NiNMi3NbayRZmhCI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/5fc4f09d3cc7d05764951f4f",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"5fc4f09d3cc7d05764951f4f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/categories/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/5fc4f09d3cc7d05764951f4f",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"5fc4f09d3cc7d05764951f4f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/categories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDY3NDE4MzB9.NZiZ3tlxREdQmbcmcvFvbL3hIR1NiNMi3NbayRZmhCI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Support\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/categories/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDY3NDE4MzB9.NZiZ3tlxREdQmbcmcvFvbL3hIR1NiNMi3NbayRZmhCI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Support\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/categories/5fc4f09d3cc7d05764951f4f",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"5fc4f09d3cc7d05764951f4f"
 							]
 						}
 					},
