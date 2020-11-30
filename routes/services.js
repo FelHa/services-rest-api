@@ -31,7 +31,7 @@ router.get(
 //post
 router.post(
   '/',
-  [auth, validateRequest(validate)],
+  [auth, admin, validateRequest(validate)],
   asyncTemplate(async (req, res) => {
     const categories = await Category.getCategories(req.body.categoryIds);
     if (categories.length === 0 || categories[0] === null)
@@ -49,7 +49,7 @@ router.post(
 //put
 router.put(
   '/:id',
-  [auth, validateRequest(validate), validateObjectId],
+  [auth, admin, validateRequest(validate), validateObjectId],
   asyncTemplate(async (req, res) => {
     const service = await Service.findById(req.params.id);
     if (!service)
