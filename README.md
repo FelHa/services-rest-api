@@ -2,7 +2,7 @@
 
 Rest API template with Node.js, Express and and MongoDB with Mongoose. Featuring authentication, user management and subscription of services.
 
-Endpunkte:
+Endpoints:
 
 - /api/users
 - /api/services
