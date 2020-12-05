@@ -12,11 +12,13 @@ const Service = mongoose.model(
       minlength: 1,
       maxlength: 255,
     },
+    date: { type: Date, required: true, default: Date.now },
     categories: {
       type: [categorySchema],
       required: true,
     },
     user: {
+      _id: mongoose.Types.ObjectId,
       name: {
         type: String,
         required: true,
@@ -30,11 +32,17 @@ const Service = mongoose.model(
         required: true,
       },
     },
-    monthlyRate: {
-      type: Number,
-      required: true,
-      min: 0,
-      max: 5e4,
+    costs: {
+      isMonthly: {
+        type: Boolean,
+        required: true,
+      },
+      amount: {
+        type: Number,
+        min: 0,
+        max: 5e6,
+        required: true,
+      },
     },
   })
 );
@@ -44,7 +52,8 @@ function validateRequest(req) {
     title: Joi.string().required(),
     categoryIds: Joi.array().items(Joi.objectId()).min(1),
     user: Joi.objectId().required(),
-    monthlyRate: Joi.number().max(5e4).required(),
+    isMonthly: Joi.boolean().required(),
+    amount: Joi.number().required(),
   };
   return (valResult = Joi.validate(req.body, schema));
 }

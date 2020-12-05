@@ -1,5 +1,7 @@
 const asyncTemplate = require('../middleware/asyncTemplate');
-const auth = require('../middleware/auth');
+const authenticate = require('../middleware/authenticate');
+const authorize = require('../shared/authorize');
+const admin = require('../middleware/admin');
 const express = require('express');
 const router = express.Router();
 const { Subscription, validate } = require('../models/subscription');
@@ -11,18 +13,36 @@ const validateRequest = require('../middleware/validateRequest');
 //get
 router.get(
   '/',
-  auth,
+  [authenticate, admin],
   asyncTemplate(async (req, res) => {
-    const subscription = await Subscription.find().sort('-dateOut');
-    res.send(subscription);
+    const subscriptions = await Subscription.find().sort('-dateOut');
+    res.send(subscriptions);
+  })
+);
+
+router.get(
+  '/userSubscriptions',
+  [authenticate],
+  asyncTemplate(async (req, res) => {
+    const subscriptions = await Subscription.find().sort('-dateOut');
+
+    const filtered = subscriptions.filter(
+      (subscription) => subscription.user._id == res.locals.token._id
+    );
+
+    res.send(filtered);
   })
 );
 
 router.get(
   '/:id',
-  [auth, validateObjectId],
+  [authenticate, validateObjectId],
   asyncTemplate(async (req, res) => {
     const subscription = await Subscription.findById({ _id: req.params.id });
+
+    if (!authorize(subscription.user._id, res))
+      return res.status(403).send('User not authorized.');
+
     if (!subscription || subscription.length === 0)
       return res.status(404).send('No subscription with matching id found.');
     res.send(subscription);
@@ -32,11 +52,14 @@ router.get(
 //post
 router.post(
   '/',
-  [auth, validateRequest(validate)],
+  [authenticate, validateRequest(validate)],
   asyncTemplate(async (req, res) => {
     const user = await User.findById({ _id: req.body.user });
 
     if (!user) return res.status(404).send('No user with matching id found.');
+
+    if (!authorize(user._id, res))
+      return res.status(403).send('User not authorized.');
 
     const service = await Service.findById({ _id: req.body.service });
     if (!service)
@@ -51,7 +74,7 @@ router.post(
         .status(404)
         .send('This service has already been subscribed by the given user.');
 
-    subscription = new Subscription({
+    subscription = {
       user: {
         _id: user._id,
         name: user.name,
@@ -60,9 +83,15 @@ router.post(
       service: {
         _id: service._id,
         title: service.title,
-        monthlyRate: service.monthlyRate,
+        costs: service.costs,
       },
-    });
+    };
+
+    if (!service.costs.isMonthly) {
+      subscription.subscriptionFee = service.costs.amount;
+    }
+
+    subscription = new Subscription(subscription);
 
     await subscription.save();
 

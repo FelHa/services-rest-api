@@ -1,6 +1,6 @@
 # services-rest-api
 
-Rest API template with Node.js, Express and and MongoDB with Mongoose. Featuring authentication, user management and rental of services.
+Rest API template with Node.js, Express and and MongoDB with Mongoose. Featuring authentication, user management and subscription of services.
 
 Endpunkte:
 

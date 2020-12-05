@@ -1,5 +1,5 @@
 const asyncTemplate = require('../middleware/asyncTemplate');
-const auth = require('../middleware/auth');
+const authenticate = require('../middleware/authenticate');
 const admin = require('../middleware/admin');
 const _ = require('lodash');
 const express = require('express');
@@ -11,6 +11,7 @@ const validateObjectId = require('../middleware/validateObjectId');
 //get
 router.get(
   '/',
+  [authenticate],
   asyncTemplate(async (req, res) => {
     const categories = await Category.find().sort('name');
     res.send(categories);
@@ -19,7 +20,7 @@ router.get(
 
 router.get(
   '/:id',
-  validateObjectId,
+  [authenticate, validateObjectId],
   asyncTemplate(async (req, res) => {
     const category = await Category.findById({ _id: req.params.id });
     if (!category)
@@ -31,7 +32,7 @@ router.get(
 //post
 router.post(
   '/',
-  [auth, admin, validateRequest(validate)],
+  [authenticate, admin, validateRequest(validate)],
   asyncTemplate(async (req, res) => {
     const category = new Category(_.pick(req.body, 'name'));
     await category.save();
@@ -42,7 +43,7 @@ router.post(
 //put
 router.put(
   '/:id',
-  [auth, admin, validateRequest(validate), validateObjectId],
+  [authenticate, admin, validateRequest(validate), validateObjectId],
   asyncTemplate(async (req, res) => {
     const category = await Category.findById(req.params.id);
     if (!category)
@@ -55,7 +56,7 @@ router.put(
 //delete
 router.delete(
   '/:id',
-  [auth, admin, validateObjectId],
+  [authenticate, admin, validateObjectId],
   asyncTemplate(async (req, res) => {
     const category = await Category.findById(req.params.id);
     if (!category)

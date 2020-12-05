@@ -1,6 +1,6 @@
 const asyncTemplate = require('../middleware/asyncTemplate');
-const auth = require('../middleware/auth');
-const admin = require('../middleware/admin');
+const authenticate = require('../middleware/authenticate');
+const authorize = require('../shared/authorize');
 const express = require('express');
 const router = express.Router();
 const { Service, validate } = require('../models/service');
@@ -12,6 +12,7 @@ const { Category } = require('../models/category');
 //get
 router.get(
   '/',
+  [authenticate],
   asyncTemplate(async (req, res) => {
     const services = await Service.find().sort('name');
     res.send(services);
@@ -20,11 +21,12 @@ router.get(
 
 router.get(
   '/:id',
-  validateObjectId,
+  [authenticate, validateObjectId],
   asyncTemplate(async (req, res) => {
     const service = await Service.findById({ _id: req.params.id });
     if (!service)
       return res.status(404).send('No service with matching id found.');
+
     res.send(service);
   })
 );
@@ -32,24 +34,27 @@ router.get(
 //post
 router.post(
   '/',
-  [auth, admin, validateRequest(validate)],
+  [authenticate, validateRequest(validate)],
   asyncTemplate(async (req, res) => {
     const categories = await Category.getCategories(req.body.categoryIds);
     if (categories.length === 0 || categories[0] === null)
       return res.status(400).send('Invalid category.');
+
     const user = await User.findById({ _id: req.body.user });
     if (!user) return res.status(404).send('No user with matching id found.');
+
     let service = new Service({
       title: req.body.title,
       categories: categories,
-      user: {
-        _id: user._id,
-        name: user.name,
-        email: user.email,
+      user: user,
+      costs: {
+        isMonthly: req.body.isMonthly,
+        amount: req.body.amount,
       },
-      monthlyRate: req.body.monthlyRate,
     });
+
     service = await service.save();
+
     res.send(service);
   })
 );
@@ -57,20 +62,29 @@ router.post(
 //put
 router.put(
   '/:id',
-  [auth, admin, validateRequest(validate), validateObjectId],
+  [authenticate, validateRequest(validate), validateObjectId],
   asyncTemplate(async (req, res) => {
     const service = await Service.findById(req.params.id);
     if (!service)
       return res.status(404).send('No service with matching id found.');
+
+    if (!authorize(service.user._id, res))
+      return res.status(403).send('User not authorized.');
+
     const categories = await Category.getCategories(req.body.categoryIds);
     if (categories.length === 0 || categories[0] === null)
       return res.status(400).send('Invalid category.');
+
     const update = {
       title: req.body.title,
       categories: categories,
-      monthlyRate: req.body.monthlyRate,
+      costs: {
+        isMonthly: req.body.isMonthly,
+        amount: req.body.amount,
+      },
     };
     await service.set(update).save();
+
     res.send(service);
   })
 );
@@ -78,11 +92,15 @@ router.put(
 //delete
 router.delete(
   '/:id',
-  [auth, admin, validateObjectId],
+  [authenticate, validateObjectId],
   asyncTemplate(async (req, res) => {
     const service = await Service.findById(req.params.id);
     if (!service)
       return res.status(404).send('No service with matching id found.');
+
+    if (!authorize(service.user._id, res))
+      return res.status(403).send('User not authorized.');
+
     service.remove();
     res.send(service);
   })

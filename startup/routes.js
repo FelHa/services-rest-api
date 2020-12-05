@@ -6,7 +6,7 @@ const subscriptions = require('../routes/subscriptions');
 const users = require('../routes/users');
 const home = require('../routes/home');
 const auths = require('../routes/auths');
-const returns = require('../routes/returns');
+const cancelations = require('../routes/cancelations');
 const errorRequestPipeline = require('../middleware/errorRequestPipeline');
 
 module.exports = function (app) {
@@ -23,7 +23,7 @@ module.exports = function (app) {
   app.use('/api/subscriptions', subscriptions);
   app.use('/api/users', users);
   app.use('/api/auth', auths);
-  app.use('/api/returns', returns);
+  app.use('/api/cancelations', cancelations);
   app.use('/', home);
 
   //errorhandler as last middleware

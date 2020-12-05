@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5466681d-3f07-4e75-a1ad-51db87f4aba1",
+		"_postman_id": "453a99f1-7b99-4ae0-b32e-5f23276e8cb5",
 		"name": "services-rest-api Heroku",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -27,7 +27,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\": \"Consulting for large React projects\",\n    \"categoryIds\": [\"5fc4f0383cc7d05764951f4e\"],\n    \"monthlyRate\": 1550\n}",
+							"raw": "{\n\t\"title\": \"Musikunterricht\",\n    \"categoryIds\": [\"5fcbaf11bd06130690edbd06\", \"5fcbaeaabd06130690edbd03\"],\n    \"user\": \"5fcbae1ebd06130690edbcfb\",\n    \"isMonthly\": true,\n    \"amount\": 90\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -62,7 +62,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/5fc4fa8f712674502cdcd751",
+							"raw": "https://services-rest-api.herokuapp.com/api/services/5fcbbea3c43c4b0f981784c4",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -71,7 +71,8 @@
 							],
 							"path": [
 								"api",
-								"5fc4fa8f712674502cdcd751"
+								"services",
+								"5fcbbea3c43c4b0f981784c4"
 							]
 						}
 					},
@@ -90,13 +91,13 @@
 							},
 							{
 								"key": "X-Auth-Token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWUxZWJkMDYxMzA2OTBlZGJjZmIiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA3MTk2MzM1fQ.InNf0QFrYs_sO8uhmeB2KfdnxkNVBTRMeP1sN9qz5m0",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\": \"Barfoo\",\n\t\"dailyRentalRate\": 12 \n}",
+							"raw": "{\n\t\"title\": \"Musikunterricht\",\n    \"categoryIds\": [\"5fcbaf11bd06130690edbd06\", \"5fcbaeaabd06130690edbd03\"],\n    \"user\": \"5fcbae1ebd06130690edbcfb\",\n    \"isMonthly\": true,\n    \"amount\": 80\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -104,7 +105,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/5fb51884e6f52b10e000bf78",
+							"raw": "https://services-rest-api.herokuapp.com/api/services/5fcbe8b9ea552f14b006db19",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -113,7 +114,8 @@
 							],
 							"path": [
 								"api",
-								"5fb51884e6f52b10e000bf78"
+								"services",
+								"5fcbe8b9ea552f14b006db19"
 							]
 						}
 					},
@@ -123,7 +125,13 @@
 					"name": "api/services",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NmFmY2E2ZWE0YTA5MDhiMzRlNjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTc2MTR9.r-YW2k9hzkMbEZkgg6_nF2rovb4K5qkwtwJiObx7G-s",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://services-rest-api.herokuapp.com/api/services",
 							"protocol": "https",
@@ -188,12 +196,12 @@
 							{
 								"key": "X-Auth-Token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWRjMWJkMDYxMzA2OTBlZGJjZjkiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA3MjAxMTg5fQ.kx-v8NBxzR-RRjl_fKHcA49x8orhxT-rG-AXyMot3E0"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"user\": \"5fb62ffa23d2760017689edb\",\n\t\"service\": \"5fb51884e6f52b10e000bf78\"\n}",
+							"raw": "{\n\t\"user\": \"5fcbadc1bd06130690edbcf9\",\n\t\"service\": \"5fcbe92319014f0d9cf1fe4c\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -212,6 +220,52 @@
 								"api",
 								"subscriptions",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/subscriptions/userSubscriptions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWUwY2JkMDYxMzA2OTBlZGJjZmEiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA3MjAwNjAzfQ.Lu2KDnIx3SwWW4_An26nZ2wA8_ykawIixtU-t8tNplc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://services-rest-api.herokuapp.com/api/subscriptions/userSubscriptions",
+							"protocol": "https",
+							"host": [
+								"services-rest-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"subscriptions",
+								"userSubscriptions"
 							]
 						}
 					},
@@ -237,7 +291,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"adminAnton\",\n\t\"email\": \"adminAnton@sra.net\",\n\t\"password\": \"foobar23\",\n\t\"isAdmin\": \"true\"\n}",
+							"raw": "{\n\t\"name\": \"Elisa\",\n\t\"email\": \"Elisa@proton.net\",\n\t\"password\": \"test23\",\n\t\"isAdmin\": \"false\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -288,7 +342,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/5fb55f8915104e2ca7cde862",
+							"raw": "https://services-rest-api.herokuapp.com/api/users/5fb518a6e6f52b10e000bf7a",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -297,7 +351,8 @@
 							],
 							"path": [
 								"api",
-								"5fb55f8915104e2ca7cde862"
+								"users",
+								"5fb518a6e6f52b10e000bf7a"
 							]
 						}
 					},
@@ -344,13 +399,13 @@
 							},
 							{
 								"key": "X-Auth-Token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTM0NzI0MDE0MmNhOTAwZjg3ZWRjMzYiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1ODA0OTU0MjR9.r3RuCXvHAzV9286WCPLNESGHdD7NY6fmrTqKtnfNwQM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmIxMDQ2MmQ4OWM3NzJlMTRkMjU1NjUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU0MzY1MTh9._LaI0AlP-0157xbBk3lxqlJSWlr-hs8_nrjcMKZ_asY",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"AdminAnton\",\n\t\"email\": \"new@adminAnton.com\",\n\t\"password\":\"test23\",\n\t\"isAdmin\": \"true\"\n}",
+							"raw": "{\n\t\"name\": \"Gen Eric\",\n\t\"email\": \"foo@bar32r22r.com\",\n\t\"password\":\"test23\",\n\t\"isAdmin\": \"false\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -358,7 +413,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/5fb8d258259a2c00176b512e",
+							"raw": "https://services-rest-api.herokuapp.com/api/users/5fcba818c4f207086c3581df",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -367,7 +422,8 @@
 							],
 							"path": [
 								"api",
-								"5fb8d258259a2c00176b512e"
+								"users",
+								"5fcba818c4f207086c3581df"
 							]
 						}
 					},
@@ -381,7 +437,7 @@
 							{
 								"key": "X-Auth-Token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWUxZWJkMDYxMzA2OTBlZGJjZmIiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA3MTk2MzM1fQ.InNf0QFrYs_sO8uhmeB2KfdnxkNVBTRMeP1sN9qz5m0"
 							},
 							{
 								"key": "Content-Type",
@@ -402,6 +458,39 @@
 								"api",
 								"users",
 								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWQ1ZmJkMDYxMzA2OTBlZGJjZjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDcxODM3MTF9.vwqiYV4A6xkGImQ2Lv3XFlXp6Gdd9qteUbTtb5shcz4",
+							"host": [
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+								"eyJfaWQiOiI1ZmNiYWQ1ZmJkMDYxMzA2OTBlZGJjZjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDcxODM3MTF9",
+								"vwqiYV4A6xkGImQ2Lv3XFlXp6Gdd9qteUbTtb5shcz4"
+							]
+						},
+						"description": "Admin Token:\r\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWQ1ZmJkMDYxMzA2OTBlZGJjZjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDcxODM3MTF9.vwqiYV4A6xkGImQ2Lv3XFlXp6Gdd9qteUbTtb5shcz4"
+					},
+					"response": []
+				},
+				{
+					"name": "User Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWRjMWJkMDYxMzA2OTBlZGJjZjkiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA3MTgzODA5fQ.mOzLUegDe2qTCtc0YOmB39_arZq4ARiwh5QCrKZ49Hc",
+							"host": [
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+								"eyJfaWQiOiI1ZmNiYWRjMWJkMDYxMzA2OTBlZGJjZjkiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA3MTgzODA5fQ",
+								"mOzLUegDe2qTCtc0YOmB39_arZq4ARiwh5QCrKZ49Hc"
 							]
 						}
 					},
@@ -427,7 +516,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"new@adminAnton.com\",\n\t\"password\": \"test23\"\n}",
+							"raw": "{\n\t\"email\": \"anton@proton.net\",\n\t\"password\": \"test23\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -455,17 +544,17 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "returns",
+			"name": "cancelations",
 			"item": [
 				{
-					"name": "api/returns",
+					"name": "api/cancelations",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "X-Auth-Token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI4ZDI1ODI1OWEyYzAwMTc2YjUxMmUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDU5NDc5OTJ9.R6t8ElMxDOYVOjZKPzB2kFuWdnYb8zQHRVldH5rAHtc"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWRjMWJkMDYxMzA2OTBlZGJjZjkiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA3MjAwOTY5fQ.H-DLayMlT7Aduxl0TdyfMLActISQshXGCW54cOg-ns0"
 							},
 							{
 								"key": "Content-Type",
@@ -476,7 +565,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"userId\": \"5fb10462d89c772e14d25565\",\n\t\"serviceId\":\"5fb109f09768cb1cc08719ba\"\n}",
+							"raw": "{\n\t\"userId\": \"5fcbadc1bd06130690edbcf9\",\n\t\"serviceId\":\"5fcbe92319014f0d9cf1fe4c\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -484,7 +573,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/returns",
+							"raw": "https://services-rest-api.herokuapp.com/api/cancelations",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -493,7 +582,7 @@
 							],
 							"path": [
 								"api",
-								"returns"
+								"cancelations"
 							]
 						}
 					},
@@ -509,7 +598,13 @@
 					"name": "api/categories",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWQ1ZmJkMDYxMzA2OTBlZGJjZjgiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDcxODM3MTF9.vwqiYV4A6xkGImQ2Lv3XFlXp6Gdd9qteUbTtb5shcz4",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://services-rest-api.herokuapp.com/api/categories/",
 							"protocol": "https",
@@ -539,7 +634,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/5fc4f09d3cc7d05764951f4f",
+							"raw": "https://services-rest-api.herokuapp.com/api/categories/5fcbae95bd06130690edbd01",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -548,7 +643,8 @@
 							],
 							"path": [
 								"api",
-								"5fc4f09d3cc7d05764951f4f"
+								"categories",
+								"5fcbae95bd06130690edbd01"
 							]
 						}
 					},
@@ -560,7 +656,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/5fc4f09d3cc7d05764951f4f",
+							"raw": "https://services-rest-api.herokuapp.com/api/categories/5fc4f09d3cc7d05764951f4f",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -569,6 +665,7 @@
 							],
 							"path": [
 								"api",
+								"categories",
 								"5fc4f09d3cc7d05764951f4f"
 							]
 						}
@@ -588,7 +685,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Support\"\r\n}",
+							"raw": "{\r\n\t\"name\": \"Nachhilfe & Kurse\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -624,7 +721,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Support\"\r\n}",
+							"raw": "{\r\n\t\"name\": \"Software Entwicklung\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -632,7 +729,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://services-rest-api.herokuapp.com/api/categories/5fc4f09d3cc7d05764951f4f",
+							"raw": "https://services-rest-api.herokuapp.com/api/categories/5fc4f00f3cc7d05764951f4d",
 							"protocol": "https",
 							"host": [
 								"services-rest-api",
@@ -642,7 +739,7 @@
 							"path": [
 								"api",
 								"categories",
-								"5fc4f09d3cc7d05764951f4f"
+								"5fc4f00f3cc7d05764951f4d"
 							]
 						}
 					},

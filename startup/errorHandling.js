@@ -4,6 +4,7 @@ const winston = require('winston');
 
 module.exports = function () {
   //add error handler for sync uncaught exceptions
+  winston.exitOnError = true; // (To Exit or Not to Exit)
   winston.handleExceptions(
     new winston.transports.Console({ colorize: true, prettyPrint: true }),
     new winston.transports.File({ filename: 'uncaughtExceptions.log' })

@@ -5,6 +5,7 @@ const moment = require('moment');
 const subscriptionSchema = new mongoose.Schema({
   user: {
     type: new mongoose.Schema({
+      _id: mongoose.Types.ObjectId,
       name: {
         type: String,
         required: true,
@@ -22,6 +23,7 @@ const subscriptionSchema = new mongoose.Schema({
   },
   service: {
     type: new mongoose.Schema({
+      _id: mongoose.Types.ObjectId,
       title: {
         type: String,
         required: true,
@@ -29,16 +31,22 @@ const subscriptionSchema = new mongoose.Schema({
         minlength: 2,
         maxlength: 255,
       },
-      monthlyRate: {
-        type: Number,
-        required: true,
-        min: 0,
-        max: 5e4,
+      costs: {
+        isMonthly: {
+          type: Boolean,
+          required: true,
+        },
+        amount: {
+          type: Number,
+          min: 0,
+          max: 5e6,
+          required: true,
+        },
       },
     }),
     required: true,
   },
-  dateOut: {
+  dateBuyed: {
     type: Date,
     required: true,
     default: Date.now,
@@ -50,6 +58,7 @@ const subscriptionSchema = new mongoose.Schema({
   subscriptionFee: {
     type: Number,
     min: 0,
+    required: false,
   },
 });
 
@@ -64,7 +73,7 @@ subscriptionSchema.statics.lookup = function (userId, serviceId) {
 subscriptionSchema.methods.return = function () {
   this.dateReturned = new Date();
   this.subscriptionFee =
-    (moment().diff(this.dateOut, 'months') + 1) * this.service.monthlyRate;
+    (moment().diff(this.dateOut, 'months') + 1) * this.service.costs.amount;
 };
 
 const Subscription = mongoose.model('Subscription', subscriptionSchema);
