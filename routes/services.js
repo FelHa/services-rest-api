@@ -4,6 +4,7 @@ const admin = require('../middleware/admin');
 const express = require('express');
 const router = express.Router();
 const { Service, validate } = require('../models/service');
+const { User } = require('../models/user');
 const validateRequest = require('../middleware/validateRequest');
 const validateObjectId = require('../middleware/validateObjectId');
 const { Category } = require('../models/category');
@@ -36,9 +37,16 @@ router.post(
     const categories = await Category.getCategories(req.body.categoryIds);
     if (categories.length === 0 || categories[0] === null)
       return res.status(400).send('Invalid category.');
+    const user = await User.findById({ _id: req.body.user });
+    if (!user) return res.status(404).send('No user with matching id found.');
     let service = new Service({
       title: req.body.title,
       categories: categories,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      },
       monthlyRate: req.body.monthlyRate,
     });
     service = await service.save();

@@ -16,6 +16,20 @@ const Service = mongoose.model(
       type: [categorySchema],
       required: true,
     },
+    user: {
+      name: {
+        type: String,
+        required: true,
+        minlength: 3,
+        maxlength: 50,
+      },
+      email: {
+        type: String,
+        minlength: 5,
+        maxlength: 255,
+        required: true,
+      },
+    },
     monthlyRate: {
       type: Number,
       required: true,
@@ -29,6 +43,7 @@ function validateRequest(req) {
   const schema = {
     title: Joi.string().required(),
     categoryIds: Joi.array().items(Joi.objectId()).min(1),
+    user: Joi.objectId().required(),
     monthlyRate: Joi.number().max(5e4).required(),
   };
   return (valResult = Joi.validate(req.body, schema));
