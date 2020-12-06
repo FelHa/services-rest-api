@@ -8,6 +8,7 @@ const home = require('../routes/home');
 const auths = require('../routes/auths');
 const cancelations = require('../routes/cancelations');
 const errorRequestPipeline = require('../middleware/errorRequestPipeline');
+const cors = require('cors');
 
 module.exports = function (app) {
   //middleware
@@ -15,7 +16,7 @@ module.exports = function (app) {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.static('public'));
   app.use(helmet());
-  //   app.use(controlOrigins);
+  app.use(cors());
 
   //router
   app.use('/api/services', services);
