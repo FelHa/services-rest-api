@@ -47,6 +47,7 @@ router.post(
       title: req.body.title,
       categories: categories,
       user: user,
+      description: req.body.description,
       costs: {
         isMonthly: req.body.isMonthly,
         amount: req.body.amount,
@@ -78,6 +79,7 @@ router.put(
     const update = {
       title: req.body.title,
       categories: categories,
+      description: req.body.description,
       costs: {
         isMonthly: req.body.isMonthly,
         amount: req.body.amount,

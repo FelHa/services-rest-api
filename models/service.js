@@ -17,6 +17,13 @@ const Service = mongoose.model(
       type: [categorySchema],
       required: true,
     },
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 15,
+      maxlength: 5000,
+    },
     user: {
       _id: mongoose.Types.ObjectId,
       name: {
@@ -49,8 +56,9 @@ const Service = mongoose.model(
 
 function validateRequest(req) {
   const schema = {
-    title: Joi.string().required(),
+    title: Joi.string().required().min(1).max(255),
     categoryIds: Joi.array().items(Joi.objectId()).min(1),
+    description: Joi.string().required().min(15).max(5000),
     user: Joi.objectId().required(),
     isMonthly: Joi.boolean().required(),
     amount: Joi.number().required(),
