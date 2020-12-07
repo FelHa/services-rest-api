@@ -50,9 +50,7 @@ router.post(
 
     const token = user.generateAuthToken();
 
-    res
-      .header('X-Auth-Token', token)
-      .send(_.pick(user, ['_id', 'name', 'email']));
+    res.send({ ..._.pick(user, ['_id', 'name', 'email']), token });
   })
 );
 
