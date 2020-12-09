@@ -12,7 +12,6 @@ const { Category } = require('../models/category');
 //get
 router.get(
   '/',
-  [authenticate],
   asyncTemplate(async (req, res) => {
     const services = await Service.find().sort('name');
     res.send(services);
@@ -21,7 +20,7 @@ router.get(
 
 router.get(
   '/:id',
-  [authenticate, validateObjectId],
+  [validateObjectId],
   asyncTemplate(async (req, res) => {
     const service = await Service.findById({ _id: req.params.id });
     if (!service)
