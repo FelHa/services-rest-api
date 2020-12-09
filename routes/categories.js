@@ -11,7 +11,7 @@ const validateObjectId = require('../middleware/validateObjectId');
 //get
 router.get(
   '/',
-  [authenticate],
+
   asyncTemplate(async (req, res) => {
     const categories = await Category.find().sort('name');
     res.send(categories);
@@ -20,7 +20,7 @@ router.get(
 
 router.get(
   '/:id',
-  [authenticate, validateObjectId],
+  [validateObjectId],
   asyncTemplate(async (req, res) => {
     const category = await Category.findById({ _id: req.params.id });
     if (!category)
