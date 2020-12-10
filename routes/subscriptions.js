@@ -69,7 +69,7 @@ router.post(
       req.body.user,
       req.body.service
     );
-    if (subscription)
+    if (subscription && !subscription.subscriptionFee)
       return res
         .status(404)
         .send('This service has already been subscribed by the given user.');
