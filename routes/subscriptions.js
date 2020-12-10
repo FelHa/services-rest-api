@@ -72,7 +72,7 @@ router.post(
     if (subscription && !subscription.subscriptionFee)
       return res
         .status(404)
-        .send('This service has already been subscribed by the given user.');
+        .send('This service has already been subscribed by the user.');
 
     subscription = {
       user: {
