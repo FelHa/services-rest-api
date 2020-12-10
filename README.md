@@ -1,6 +1,8 @@
 # services-rest-api
 
-Rest API template with Node.js, Express and and MongoDB with Mongoose. Featuring authentication, user management and subscription of services.
+Rest-API-Muster auf Basis von Node.js/Express und MongoDB/Mongoose (Cluster auf MongoDB-Atlas).
+
+Unterstützt User Roll Based Management (Authentifizierung, Autorisierung) und das Anlegen, Subscriben und Kündigen von Diensten und dafür notwendige Ressourcen.
 
 Endpoints:
 
@@ -11,4 +13,4 @@ Endpoints:
 - /api/returns
 - /api/auths
 
-API hosted at Heroku: https://services-rest-api.herokuapp.com/
+API gehosted auf Heroku: https://services-rest-api.herokuapp.com/
