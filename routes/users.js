@@ -22,23 +22,25 @@ router.get(
 );
 
 router.get(
-  '/:id',
-  [authenticate, validateObjectId],
+  '/me',
+  [authenticate],
   asyncTemplate(async (req, res) => {
-    const user = await User.findById(req.params.id);
+    console.log('Hi');
+    console.log(res.locals.token._id);
+    const user = await User.findById({ _id: res.locals.token._id }).select(
+      '-password'
+    );
+
     if (!user) return res.status(404).send('No user with matching id found.');
     res.send(user);
   })
 );
 
 router.get(
-  '/me',
-  [authenticate],
+  '/:id',
+  [authenticate, validateObjectId],
   asyncTemplate(async (req, res) => {
-    const user = await User.findById({ _id: res.locals.token._id }).select(
-      '-password'
-    );
-
+    const user = await User.findById(req.params.id);
     if (!user) return res.status(404).send('No user with matching id found.');
     res.send(user);
   })
